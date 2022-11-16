@@ -1,5 +1,11 @@
 {
     "navigationFallback": {
         "rewrite": "/index.html"
+    },
+    "globalHeaders": {
+        "Access-Control-Allow-Origin": "https://example.com",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Content-Security-Policy": "frame-ancestors 'none'",
+        "X-Frame-Options": "DENY"
     }
 }
