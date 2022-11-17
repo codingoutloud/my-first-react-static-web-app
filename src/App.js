@@ -4,7 +4,9 @@ function App() {
   const clock = '⏰';
   var date = new Date();
   
-  var x = 1 / ((date.getSeconds() % 4) - 3); // on time in 4 will cause divide by zero error
+  const failEveryNSeconds = 4;
+  if (date.getSeconds() % failEveryNSeconds == 0)
+    throw new Error('Something "bad" happened (1 of every {failEveryNSeconds} seconds}).');
   
   // blind spot for internationalization - can we detect in a Playwright test that uses different browser settings?
   return <div>Hello World! [{x}] Right now is {date.getFullYear()}-{date.getMonth()+1}-{date.getDate()} @ {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}! {clock}</div>;
