@@ -5,7 +5,7 @@ function App() {
   var date = new Date();
   
   const failEveryNSeconds = 4;
-  if (date.getSeconds() % failEveryNSeconds == 0)
+  if (date.getSeconds() % failEveryNSeconds === 0)
     throw new Error('Something "bad" happened (1 of every {failEveryNSeconds} seconds}).');
   
   // blind spot for internationalization - can we detect in a Playwright test that uses different browser settings?
