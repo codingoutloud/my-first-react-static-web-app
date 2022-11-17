@@ -6,8 +6,11 @@ function App() {
   
   const failEveryNSeconds = 4;
   let n = date.getSeconds();
+
+  console.log(`Something "bad" happened (1 of every ${failEveryNSeconds} seconds).`);
+
   if (n % failEveryNSeconds === 0)
-    throw new Error(`Something "bad" happened (1 of every {failEveryNSeconds} seconds).`);
+    throw new Error(`Something "bad" happened (1 of every ${failEveryNSeconds} seconds).`);
   
   // blind spot for internationalization - can we detect in a Playwright test that uses different browser settings?
   return <div>Hello World! [{n}/{failEveryNSeconds}] Right now is {date.getFullYear()}-{date.getMonth()+1}-{date.getDate()} @ {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}! {clock}</div>;
