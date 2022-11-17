@@ -9,7 +9,7 @@ function App() {
     throw new Error('Something "bad" happened (1 of every {failEveryNSeconds} seconds}).');
   
   // blind spot for internationalization - can we detect in a Playwright test that uses different browser settings?
-  return <div>Hello World! [{x}] Right now is {date.getFullYear()}-{date.getMonth()+1}-{date.getDate()} @ {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}! {clock}</div>;
+  return <div>Hello World! [{failEveryNSeconds}] Right now is {date.getFullYear()}-{date.getMonth()+1}-{date.getDate()} @ {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}! {clock}</div>;
 }
 
 export default App;
